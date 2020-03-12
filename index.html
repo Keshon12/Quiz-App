@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="Description" content="html css and js quiz app">
+    <title>Quiz App</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!--Create title header-->
+    <header>
+      <div class="quiz">
+        <h1>Basketball Quiz</h1>
+        <!--Class for keeping track of question and score-->
+        <div class="question-number-and-score"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!--create the base/front page of the quiz-->
+      <fieldset>
+        <div class="quiz">
+          <legend>Sports! Strictly Basketball</legend>
+          <p> This will be a simple quiz of 10 questions that will test your basketball knowledge.</p>
+        </div>
+        <!--Add a start quiz button-->
+        <div class="quiz">
+          <button type="button" id="start">Start Quiz</button>
+        </div>
+      </fieldset>
+    </main>
+    <!--Run js scripts-->
+    <script src="script.js"></script>
+  </body>
+</html>
