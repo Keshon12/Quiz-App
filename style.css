@@ -38,7 +38,3 @@ header {
   .question-number-and-score {
     text-align: center;
   }
-
-  .wrong {
-    color: red;
-  }
