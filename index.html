@@ -12,9 +12,18 @@
     <header>
       <div class="quiz">
         <h1>Basketball Quiz</h1>
-        <!--Class for keeping track of question and score-->
-        <div class="question-number-and-score"></div>
       </div>
+        <section>
+          <!--Classes for keeping track of question and score-->
+          <ul>
+            <li class="progress"> Question Number:
+              <span class="question">0</span>/10
+            </li>
+            <li class="progress">Score: 
+              <span class="score">0</span>
+            </li>
+          </ul>
+        </section>
     </header>
 
     <main class="main">
@@ -31,6 +40,11 @@
       </fieldset>
     </main>
     <!--Run js scripts-->
-    <script src="script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous">
+    </script>
+    <script src="questions.js"></script>
   </body>
 </html>
