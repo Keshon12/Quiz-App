@@ -10,40 +10,34 @@
   <body>
     <!--Create title header-->
     <header>
+      <div class= "top">
       <div class="quiz">
         <h1>Basketball Quiz</h1>
+        <div class="progress-and-score"></div>
       </div>
-        <section>
-          <!--Classes for keeping track of question and score-->
-          <ul>
-            <li class="progress"> Question Number:
-              <span class="question">0</span>/10
-            </li>
-            <li class="progress">Score: 
-              <span class="score">0</span>
-            </li>
-          </ul>
-        </section>
+      </div>
     </header>
 
     <main class="main">
       <!--create the base/front page of the quiz-->
       <fieldset>
+        <div class="top">
         <div class="quiz">
           <legend>Sports! Strictly Basketball</legend>
           <p> This will be a simple quiz of 10 questions that will test your basketball knowledge.</p>
         </div>
+        </div>
         <!--Add a start quiz button-->
+        <div class="top">
         <div class="quiz">
           <button type="button" id="start">Start Quiz</button>
+        </div>
         </div>
       </fieldset>
     </main>
     <!--Run js scripts-->
     <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous">
+      src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script src="questions.js"></script>
   </body>
