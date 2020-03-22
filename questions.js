@@ -1,4 +1,4 @@
-cosnt STORE = {
+const STORE = {
    questions: [
         {//Question 1
             question: 'What NBA player scored 100 points on March 2, 1962?',
@@ -89,7 +89,7 @@ function generateQuestion () {
       <fieldset>
         <div class="top question">
           <div class="quiz">
-            <legend> ${questions.question}</legend>
+            <legend> ${STORE.questions[question]}</legend>
           </div>
         </div>
 
