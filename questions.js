@@ -89,7 +89,7 @@ function generateQuestion () {
       <fieldset>
         <div class="top question">
           <div class="quiz">
-            <legend> ${STORE.questions[question]}</legend>
+            <legend> ${question.question}</legend>
           </div>
         </div>
 
