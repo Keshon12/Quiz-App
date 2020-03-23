@@ -73,9 +73,9 @@ function updateProgress() {
 //display the answers for the question
 function displayAnswers() {
     let question = STORE.questions[STORE.progress];
-    for(let i=0; i<question.answers.length; i++) {
-        $('.js-answers').append(`<input type = "radio" name = "options" id = "option${i+1}" value = ${question.answers[i]}" tabindex = "${i+1}">
-        <label for = "option${i+1}"> ${question.answers[i]} </label> <br/> <span id = "js-r${i+1}"> </span>`);
+    for(let i=0; i < question.answers.length; i++) {
+        $('.js-answers').append(`<input type = "radio" name = "answers" id = "answer${i+1}" value = ${question.answers[i]}" tabindex = "${i+1}">
+        <label for = "answer${i+1}"> ${question.answers[i]} </label> <br/> <span id = "js-r${i+1}"> </span>`);
     }
 }
 
@@ -93,9 +93,9 @@ function generateQuestion () {
           </div>
         </div>
 
-        <div class="top options">
+        <div class="top question">
           <div class="quiz">
-            <div class="js-options"> </div>
+            <div class="js-question"> </div>
         </div>
       </div>
     
