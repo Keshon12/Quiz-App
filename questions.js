@@ -45,7 +45,7 @@ const STORE = {
             answers: [
                 'Kobe Bryant',
                 'Michael Jordan',
-                'Shaquille ONeal',
+                'Shaquille Oneal',
                 'Tim Duncan'
             ],
             correctAnswer: 'Shaquille Oneal'
@@ -74,7 +74,7 @@ function updateProgress() {
 function displayAnswers() {
     let question = STORE.questions[STORE.progress];
     for(let i=0; i < question.answers.length; i++) {
-        $('.js-answers').append(`<input type = "radio" name = "answers" id = "answer${i+1}" value = ${question.answers[i]}" tabindex = "${i+1}">
+        $('.js-answers').append(`<input type = "radio" name = "answers" id = "answer${i+1}" value = "${question.answers[i]}" tabindex = "${i+1}">
         <label for = "answer${i+1}"> ${question.answers[i]} </label> <br/> <span id = "js-r${i+1}"> </span>`);
     }
 }
@@ -82,7 +82,6 @@ function displayAnswers() {
 //display the question
 function generateQuestion () {
     let question = STORE.questions[STORE.progress];
-    updateProgress();
     const questionHtml = $(`<div>
     <form id="js-questions" class="question-form">
       
@@ -91,15 +90,15 @@ function generateQuestion () {
           <div class="quiz">
             <legend> ${question.question}</legend>
           </div>
+        <div class="js-answers">
         </div>
-
+        </div>
         <div class="top question">
           <div class="quiz">
             <div class="js-question"> </div>
         </div>
       </div>
     
-
       <div class="top">
         <div class="quiz">
           <button type = "submit" id="answer" tabindex="5">Submit</button>
@@ -111,6 +110,7 @@ function generateQuestion () {
   </div>`);
   $("main").html(questionHtml);
   updateProgress();
+  displayAnswers();
   $("#next-question").hide();
 }
 
@@ -142,12 +142,13 @@ function showAnswers() {
 function  checkQuestions() {
     $('body').on('click','#next-question', (event) => {
         STORE.progress === STORE.questions.length?
-        displayAnswers() : generateQuestion();
+        showAnswers() : generateQuestion();
  });
 }
 
 //check for right or wrong answer and display corresponding message
 function checkAnswer() {
+  
     $('body').on("submit",'#js-questions', function (event) {
         event.preventDefault();
         let current = STORE.questions[STORE.progress];
@@ -156,7 +157,7 @@ function checkAnswer() {
             alert("Please select an answer");
             return;
         }
-        let num = current.options.findIndex(i => i === selected);
+        let num = current.answers.findIndex(i => i === selected);
         let id = "#js-r" + ++num;
         $('span').removeClass("right-answer wrong-answer");
         if(selected === current.correctAnswer) {
@@ -165,7 +166,7 @@ function checkAnswer() {
             $(`${id}`).addClass("right-answer");
         }
         else {
-            $(`${id}`).append(`Your answer is wrong. <br/> The Correct answer is: ${current.correctAnswer} <br/>`);
+            $(`${id}`).append(`Your answer is wrong. The Correct answer is: ${current.correctAnswer} <br/>`);
             $(`${id}`).addClass("wrong-answer");
         }
         STORE.progress++;
