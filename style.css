@@ -1,7 +1,16 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  margin:0;
+  background:cover;
+  background-image:url("https://rfathead-res.cloudinary.com/image/upload/q_auto,f_auto/c_pad,h_900/g_north,c_crop,h_900,w_900/c_pad,h_900,w_900/guildgrace/web_licensed/pattern_swatch/m02-mibu-hexpattern_NBA_Milwaukee_Bucks_2018_Wallpaper_Honeycomb_Green.jpg");
+  background-color: #262626;
+}
+
 header {
   margin-top: 15px;
   height: 50px;
-  color: black;
+  color:blue;
   margin-bottom: 50px;
 }
 
@@ -10,10 +19,29 @@ header h1 {
   margin-top: 25px;
 }
 
+header .progress-and-score {
+  font-size: 20px;
+  font-weight: 600px;
+  color:blue;
+  background: none;
+}
+
+.progress-and-score ul {
+  text-align:center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.progress-and-score li {
+  display: inline-block;
+  padding:0 2%;
+}
+
 fieldset {
   width: 70%;
   padding: 40px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 button {
@@ -30,7 +58,54 @@ button {
   cursor: pointer;
 }
 
+.right-answer {
+ margin: 5px 20px;
+ color: green;
+}
+
+.wrong-answer {
+  margin: 5px 20px;
+  color: red;
+}
+
 legend {
   font-weight: 1000;
   font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.top {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.top::before,
+.top::after {
+  display: table;
+  content: '';
+}
+
+.top::after {
+  clear: both;
+}
+
+.quiz {
+  float: left;
+  padding-left: 1.04%;
+  padding-right: 1.04%;
+}
+
+.quiz {
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .quiz {
+    width: 100%;
+  }
 }
